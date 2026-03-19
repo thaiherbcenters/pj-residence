@@ -1,0 +1,141 @@
+/* ==========================================
+   FLOATING SOCIAL STYLES
+   ========================================== */
+
+.floating-social {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Anchor items to right to prevent shift on hover */
+    gap: 10px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.floating-social--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-40%);
+    /* Slide up slightly when hidden */
+}
+
+.floating-social__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Changed to start for slide effect */
+    width: 50px;
+    height: 50px;
+    background: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.floating-social__link:hover {
+    width: 160px;
+    /* Expand on hover */
+    padding-left: 15px;
+    /* Adjust padding */
+}
+
+/* Icon Container */
+.floating-social__icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    /* Keep icon fixed position relative to button */
+    right: 0;
+    top: 0;
+}
+
+.floating-social__icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Text Label */
+.floating-social__text {
+    opacity: 0;
+    white-space: nowrap;
+    margin-left: 10px;
+    /* Space from left edge (since we align start) */
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-right: 40px;
+    /* Space for icon */
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.floating-social__link:hover .floating-social__text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Specific Colors */
+.floating-social__link--line {
+    background: #06C755;
+}
+
+.floating-social__link--facebook {
+    background: #1877F2;
+}
+
+.floating-social__link--line:hover {
+    background: #05b54b;
+}
+
+.floating-social__link--facebook:hover {
+    background: #1569d8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-social {
+        top: auto;
+        bottom: 20%;
+        /* Position from bottom instead of center on mobile */
+        right: 0;
+        /* Stick to edge */
+        flex-direction: column;
+        /* Force vertical */
+        transform: translateY(0);
+        gap: 15px;
+        /* Slightly more gap for touch targets */
+    }
+
+    .floating-social__link {
+        width: 45px;
+        /* Slightly smaller icons on mobile */
+        height: 45px;
+    }
+
+    .floating-social__icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Disable hover expand on touch devices if preferred, or keep it. 
+       Usually click/tap triggers hover logic on mobile. 
+       Let's keep it but ensure size is manageable.
+    */
+    .floating-social__link:hover {
+        width: 140px;
+        /* Smaller expand width */
+    }
+}

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    container_name: pj_server
+    # Allow container to talk to host machine via 'host.docker.internal'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-password}
+      - DB_HOST=${DB_HOST:-host.docker.internal}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME:-pjresidence_db}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - LINE_CHANNEL_ACCESS_TOKEN=${LINE_CHANNEL_ACCESS_TOKEN}
+      - LINE_USER_ID=${LINE_USER_ID}
+    ports:
+      - "5000:5000"
+    networks:
+      - pj-network
+
+  client:
+    build: .
+    container_name: pj_client
+    depends_on:
+      - server
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/nginx/ssl:ro
+    networks:
+      - pj-network
+
+networks:
+  pj-network:
+    driver: bridge

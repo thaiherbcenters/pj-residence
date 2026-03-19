@@ -1,0 +1,668 @@
+/* ==========================================
+   ROOMS PAGE STYLES - LUXURY EDITION
+   ========================================== */
+
+.rooms-page {
+    min-height: 100vh;
+}
+
+/* Hero Banner - Luxury Style */
+.rooms-hero {
+    position: relative;
+    height: 55vh;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1815 0%, #0f0e0c 50%, #0a0908 100%);
+    overflow: hidden;
+}
+
+.rooms-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(183, 156, 105, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(183, 156, 105, 0.05) 0%, transparent 50%);
+}
+
+.rooms-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='0.5' fill='%23C9A962' fill-opacity='0.06'/%3E%3C/svg%3E");
+    background-size: 40px 40px;
+}
+
+.rooms-hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 var(--space-xl);
+}
+
+.rooms-hero__subtitle {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #c9a962;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding: 0 var(--space-2xl);
+}
+
+.rooms-hero__subtitle::before,
+.rooms-hero__subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5));
+}
+
+.rooms-hero__subtitle::before {
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5));
+}
+
+.rooms-hero__subtitle::after {
+    right: 0;
+    background: linear-gradient(90deg, rgba(201, 169, 98, 0.5), transparent);
+}
+
+.rooms-hero__title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.05em;
+}
+
+.rooms-hero__description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+}
+
+/* Room Details Section */
+.rooms-details {
+    background: linear-gradient(180deg, #ffffff 0%, #fdfcfa 100%);
+    position: relative;
+}
+
+.rooms-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.3), transparent);
+}
+
+.rooms-details__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "intro gallery"
+        "lists gallery";
+    column-gap: var(--space-4xl);
+    row-gap: var(--space-lg);
+    align-items: start;
+}
+
+.rooms-details__intro {
+    grid-area: intro;
+}
+
+.rooms-details__lists {
+    grid-area: lists;
+}
+
+.rooms-details__gallery {
+    grid-area: gallery;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.rooms-details__text {
+    font-size: 1.1rem;
+    color: #5a5a5a;
+    line-height: 2;
+    margin-bottom: var(--space-xl);
+    font-weight: 300;
+}
+
+.rooms-details__text strong {
+    color: #8b7355;
+    font-weight: 500;
+}
+
+/* Gallery - Luxury Style */
+.rooms-details__main-image {
+    position: relative;
+    height: 480px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(183, 156, 105, 0.1);
+}
+
+.rooms-details__main-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(183, 156, 105, 0.2);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.rooms-details__main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rooms-details__main-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Thumbnails */
+.rooms-details__thumbnails {
+    display: flex;
+    gap: 4px;
+    height: 100px;
+}
+
+.rooms-details__thumbnail {
+    flex: 1;
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.rooms-details__thumbnail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent;
+    z-index: 2;
+    transition: border-color 0.4s ease;
+}
+
+.rooms-details__thumbnail:hover {
+    opacity: 1;
+}
+
+.rooms-details__thumbnail:hover::before {
+    border-color: rgba(183, 156, 105, 0.5);
+}
+
+.rooms-details__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rooms-details__thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+/* Amenities Title */
+.rooms-details__amenities-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #2a2a2a;
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.05em;
+    position: relative;
+    display: inline-block;
+}
+
+.rooms-details__amenities-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: #c9a962;
+}
+
+/* Amenities Grid - Luxury Text-Only Style */
+.rooms-details__amenities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    background: transparent;
+    margin-top: var(--space-md);
+}
+
+.rooms-details__amenity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+    background: transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    border-bottom: 1px solid rgba(183, 156, 105, 0.15);
+    /* Add subtle gold line */
+}
+
+/* Remove bottom border for the last two items (last row) */
+.rooms-details__amenity:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+/* Add right border to odd items (1, 3, 5...) */
+.rooms-details__amenity:nth-child(odd) {
+    border-right: 1px solid rgba(183, 156, 105, 0.15);
+}
+
+.rooms-details__amenity::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: #c9a962;
+    transition: width 0.4s ease;
+}
+
+.rooms-details__amenity:hover::before {
+    width: 60%;
+}
+
+.rooms-details__amenity::after {
+    display: none;
+    /* Remove the old dot separator */
+}
+
+.rooms-details__amenity:hover .rooms-details__amenity-text {
+    color: #8b7355;
+}
+
+.rooms-details__amenity-text {
+    font-size: 0.8rem;
+    color: #555555;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+    text-align: center;
+}
+
+/* Common Facilities - Luxury Text-Only Style */
+.rooms-facilities__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    background: transparent;
+    border: none;
+    margin-top: var(--space-lg);
+}
+
+.rooms-facilities__card {
+    background: transparent;
+    padding: var(--space-xl) 0;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-top: 1px solid rgba(183, 156, 105, 0.2);
+}
+
+.rooms-facilities__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c9a962, #8b7355);
+    transition: width 0.5s ease;
+}
+
+.rooms-facilities__card:hover::before {
+    width: 60px;
+}
+
+.rooms-facilities__card:hover .rooms-facilities__title {
+    color: #8b7355;
+}
+
+.rooms-facilities__title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #2a2a2a;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.03em;
+    transition: color 0.4s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.rooms-facilities__description {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.8;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Pricing Section - Luxury Style */
+.rooms-pricing {
+    background: linear-gradient(180deg, #eae6de 0%, #f5f2ed 100%);
+    /* Darker cream gradient for contrast */
+    position: relative;
+    padding: var(--space-4xl) 0;
+}
+
+.rooms-pricing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.25), transparent);
+}
+
+.rooms-pricing__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(183, 156, 105, 0.3);
+    /* Stronger border and shadow */
+    border: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c9a962, #8b7355);
+    z-index: 10;
+}
+
+.pricing-card:hover {
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(183, 156, 105, 0.25);
+    transform: translateY(-8px);
+}
+
+.pricing-card--secondary::before {
+    background: linear-gradient(90deg, #888888, #666666);
+}
+
+.pricing-card__header {
+    background: linear-gradient(135deg, #faf9f7 0%, #f5f3ef 100%);
+    padding: var(--space-2xl) var(--space-xl);
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(183, 156, 105, 0.1);
+}
+
+.pricing-card--secondary .pricing-card__header {
+    background: linear-gradient(135deg, #f8f8f8 0%, #f2f2f2 100%);
+}
+
+.pricing-card__badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.pricing-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #2a2a2a;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.pricing-card__amount {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 300;
+    color: #8b7355;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.pricing-card__unit {
+    font-size: 0.8rem;
+    color: #888888;
+    letter-spacing: 0.05em;
+}
+
+.pricing-card__body {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.pricing-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: var(--space-2xl);
+    flex-grow: 1;
+}
+
+.pricing-card__features li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid rgba(183, 156, 105, 0.1);
+}
+
+.pricing-card__features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card__feature-label {
+    font-size: 0.85rem;
+    color: #777777;
+    font-weight: 300;
+}
+
+.pricing-card__feature-value {
+    font-size: 0.85rem;
+    color: #2a2a2a;
+    text-align: right;
+    font-weight: 400;
+}
+
+.pricing-card__feature-value strong {
+    color: #8b7355;
+    font-weight: 500;
+}
+
+.pricing-card__btn {
+    width: 100%;
+    padding: var(--space-md) var(--space-xl);
+}
+
+.rooms-pricing__note {
+    text-align: center;
+    margin-top: var(--space-3xl);
+}
+
+.rooms-pricing__note p {
+    font-size: 0.8rem;
+    color: #999999;
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .rooms-details__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+
+    .rooms-details__intro {
+        order: 1;
+    }
+
+    .rooms-details__gallery {
+        order: 2;
+        position: relative;
+        top: 0;
+    }
+
+    .rooms-details__lists {
+        order: 3;
+    }
+
+    .rooms-details__layout-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rooms-facilities__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rooms-pricing__cards {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rooms-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .rooms-facilities__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rooms-details__main-image {
+        height: 350px;
+    }
+
+    .rooms-details__thumbnails {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rooms-hero {
+        min-height: 350px;
+    }
+
+    .rooms-hero__title {
+        font-size: 2rem;
+    }
+
+    .rooms-facilities__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rooms-facilities__card {
+        padding: var(--space-lg);
+    }
+
+    .rooms-pricing__cards {
+        gap: var(--space-lg);
+    }
+
+    .pricing-card__amount {
+        font-size: 2.5rem;
+    }
+}

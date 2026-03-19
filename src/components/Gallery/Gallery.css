@@ -1,0 +1,283 @@
+/* ==========================================
+   GALLERY SECTION STYLES - LUXURY EDITION
+   ========================================== */
+
+.gallery {
+    background: linear-gradient(180deg, #f5f3ef 0%, #fdfcfa 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.3), transparent);
+}
+
+/* Gallery Grid - Luxury Masonry */
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    gap: 4px;
+    background: rgba(183, 156, 105, 0.08);
+    padding: 4px;
+    border: 1px solid rgba(183, 156, 105, 0.1);
+}
+
+/* Grid Layout - Masonry Style */
+.gallery__item--1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery__item--4 {
+    grid-column: span 2;
+}
+
+.gallery__item {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    background: #1a1a1a;
+}
+
+.gallery__item-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: grayscale(20%);
+}
+
+.gallery__item:hover .gallery__img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+}
+
+/* Overlay Effect */
+.gallery__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            transparent 40%,
+            rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery__item:hover::before {
+    opacity: 1;
+}
+
+/* Corner Accent */
+.gallery__item::after {
+    content: '';
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid rgba(201, 169, 98, 0.6);
+    border-left: 1px solid rgba(201, 169, 98, 0.6);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translate(-10px, -10px);
+}
+
+.gallery__item:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.gallery__item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xl) var(--space-lg);
+    background: transparent;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
+}
+
+.gallery__item:hover .gallery__item-overlay {
+    transform: translateY(0);
+}
+
+.gallery__item-category {
+    font-size: 0.65rem;
+    color: #c9a962;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.gallery__item-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-top: var(--space-xs);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+}
+
+.gallery__cta {
+    text-align: center;
+    margin-top: var(--space-4xl);
+}
+
+.gallery__cta .btn-outline-gold {
+    padding: var(--space-md) var(--space-2xl);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    border-width: 1px;
+}
+
+/* Lightbox - Luxury Style */
+.gallery__lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--space-2xl);
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gallery__lightbox-content {
+    position: relative;
+    max-width: 950px;
+    width: 100%;
+}
+
+.gallery__lightbox-image {
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(183, 156, 105, 0.2);
+}
+
+.gallery__lightbox-info {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+.gallery__lightbox-category {
+    font-size: 0.75rem;
+    color: #c9a962;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.gallery__lightbox-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: var(--space-sm);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.gallery__lightbox-close {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid rgba(183, 156, 105, 0.3);
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery__lightbox-close:hover {
+    background: #c9a962;
+    color: #1a1a1a;
+    border-color: #c9a962;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 220px);
+    }
+
+    .gallery__item--1 {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .gallery__item--4 {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 2px;
+        padding: 2px;
+    }
+
+    /* Make first item span full width */
+    .gallery__item--1 {
+        grid-column: span 2 !important;
+    }
+
+    /* Others including --4 default to span 1 */
+    .gallery__item--4 {
+        grid-column: span 1 !important;
+    }
+
+    .gallery__item {
+        height: 180px;
+        /* Reduced height slightly for pairs */
+    }
+
+    .gallery__item--1 {
+        height: 250px;
+        /* Larger height for the featured first image */
+    }
+
+    .gallery__lightbox-title {
+        font-size: 1.5rem;
+    }
+}

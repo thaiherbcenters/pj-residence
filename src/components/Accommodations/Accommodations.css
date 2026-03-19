@@ -1,0 +1,298 @@
+/* ==========================================
+   ACCOMMODATIONS SECTION STYLES - LUXURY EDITION
+   ========================================== */
+
+.accommodations {
+    background: linear-gradient(180deg, #ffffff 0%, #faf9f7 50%, #f5f3ef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.accommodations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.3), transparent);
+}
+
+.accommodations__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Room Card - Luxury Style */
+.room-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.02),
+        0 0 0 1px rgba(183, 156, 105, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.room-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c9a962, #8b7355);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+.room-card:hover::before {
+    transform: scaleX(1);
+}
+
+.room-card:hover {
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(183, 156, 105, 0.2);
+    transform: translateY(-8px);
+}
+
+.room-card__image {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.room-card__image img {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.room-card:hover .room-card__image img {
+    transform: scale(1.08);
+}
+
+.room-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: var(--space-xl);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.room-card:hover .room-card__overlay {
+    opacity: 1;
+}
+
+.room-card__content {
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.room-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(183, 156, 105, 0.15);
+}
+
+.room-card__name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: #2a2a2a;
+    margin-bottom: var(--space-xs);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.room-card__name-en {
+    font-size: 0.7rem;
+    color: #8b7355;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.room-card__price {
+    text-align: right;
+}
+
+.room-card__price-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #8b7355;
+    letter-spacing: -0.02em;
+}
+
+.room-card__price-unit {
+    display: block;
+    font-size: 0.7rem;
+    color: #888888;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+.room-card__description {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+    font-weight: 300;
+}
+
+.room-card__details {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(183, 156, 105, 0.1);
+}
+
+.room-card__detail {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: #777777;
+    letter-spacing: 0.02em;
+}
+
+.room-card__detail svg {
+    width: 16px;
+    height: 16px;
+    color: #b79c69;
+    stroke-width: 1.5;
+}
+
+.room-card__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.room-card__feature {
+    font-size: 0.7rem;
+    color: #666666;
+    background: transparent;
+    padding: var(--space-xs) 0;
+    border-radius: 0;
+    position: relative;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.room-card__feature::after {
+    content: '•';
+    margin-left: var(--space-sm);
+    color: rgba(183, 156, 105, 0.5);
+}
+
+.room-card__feature:last-child::after {
+    display: none;
+}
+
+.accommodations__cta {
+    text-align: center;
+    margin-top: var(--space-4xl);
+}
+
+/* Button Enhancement */
+.accommodations__cta .btn-outline-gold {
+    padding: var(--space-md) var(--space-2xl);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    border-width: 1px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .accommodations__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .accommodations__grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: var(--space-xl);
+    }
+
+    .room-card__content {
+        padding: var(--space-lg);
+    }
+
+    .room-card__name {
+        font-size: 1.2rem;
+    }
+
+    .room-card__price-value {
+        font-size: 1.25rem;
+    }
+
+    .room-card__details {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+}
+
+/* Special Badges for Daily Room */
+.gov-checkbox-wrapper {
+    margin: 0.75rem 0 0.25rem;
+    padding: 0.6rem;
+    background: #f0fdf4;
+    border-radius: var(--radius-sm);
+    border: 1px solid #bbf7d0;
+}
+
+.gov-checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #166534;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.gov-checkbox-sub {
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #15803d;
+    margin-left: 4px;
+}
+
+.google-review-wrapper {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.6rem;
+    background: #eff6ff;
+    border-radius: var(--radius-sm);
+    border: 1px solid #bfdbfe;
+}
+
+.google-review-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #1e40af;
+    font-weight: 600;
+}

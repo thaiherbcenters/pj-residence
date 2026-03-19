@@ -1,0 +1,139 @@
+/* ==========================================
+   WELLNESS SECTION STYLES
+   ========================================== */
+
+.wellness {
+    position: relative;
+    background: var(--color-dark);
+    overflow: hidden;
+}
+
+.wellness__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-dark-brown) 0%, var(--color-dark) 50%, #0a0a0a 100%);
+    opacity: 1;
+}
+
+.wellness__background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='1' fill='%23C9A962' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+}
+
+.wellness__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.wellness__subtitle {
+    color: var(--color-gold-light);
+}
+
+.wellness__title {
+    color: var(--color-white);
+}
+
+.wellness__description {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto var(--space-3xl);
+    line-height: 1.8;
+}
+
+/* Services Grid */
+.wellness__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+}
+
+.wellness__card {
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.wellness__card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.wellness__card-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-lg);
+}
+
+.wellness__card-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    color: var(--color-white);
+    margin-bottom: var(--space-xs);
+}
+
+.wellness__card-name-th {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+}
+
+.wellness__card-description {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.wellness__card-duration {
+    display: inline-block;
+    font-size: var(--text-xs);
+    color: var(--color-gold-light);
+    background: rgba(201, 169, 98, 0.2);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+}
+
+.wellness__btn {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.wellness__btn:hover {
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .wellness__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wellness__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wellness__card {
+        padding: var(--space-xl);
+    }
+}

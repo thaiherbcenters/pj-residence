@@ -1,0 +1,214 @@
+/* ==========================================
+   NEARBY PLACES SECTION STYLES - LUXURY EDITION
+   ========================================== */
+
+.nearby {
+    position: relative;
+    background: #1a1a1a;
+    overflow: hidden;
+}
+
+.nearby__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(180deg, #1a1815 0%, #0f0e0c 50%, #0a0908 100%);
+}
+
+.nearby__background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(183, 156, 105, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(183, 156, 105, 0.03) 0%, transparent 50%);
+}
+
+.nearby__background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.4), transparent);
+}
+
+.nearby__content {
+    position: relative;
+    z-index: 1;
+}
+
+.nearby__header {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+}
+
+.nearby__subtitle {
+    color: #c9a962;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+}
+
+.nearby__title {
+    color: #ffffff !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.05em;
+}
+
+.nearby__description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+/* Places Grid - Luxury Style */
+.nearby__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(183, 156, 105, 0.15);
+    border: 1px solid rgba(183, 156, 105, 0.15);
+}
+
+.nearby__card {
+    padding: var(--space-2xl) var(--space-xl);
+    background: linear-gradient(135deg, rgba(26, 24, 21, 0.95) 0%, rgba(15, 14, 12, 0.98) 100%);
+    border-radius: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+.nearby__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(183, 156, 105, 0.08) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.nearby__card:hover::before {
+    opacity: 1;
+}
+
+.nearby__card:hover {
+    background: linear-gradient(135deg, rgba(35, 32, 28, 0.98) 0%, rgba(20, 18, 16, 1) 100%);
+}
+
+.nearby__card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(183, 156, 105, 0.15);
+}
+
+.nearby__card-icon {
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.nearby__card-category {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.nearby__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.nearby__card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.nearby__card-item:last-child {
+    border-bottom: none;
+}
+
+.nearby__card-item:hover {
+    padding-left: var(--space-sm);
+}
+
+.nearby__card-item:hover .nearby__card-name {
+    color: #ffffff;
+}
+
+.nearby__card-name {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+.nearby__card-distance {
+    font-size: 0.7rem;
+    color: #c9a962;
+    background: rgba(201, 169, 98, 0.1);
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+    border-radius: 0;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .nearby__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nearby__grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .nearby__card {
+        padding: var(--space-lg);
+    }
+
+    .nearby__card-category {
+        font-size: 0.9rem;
+    }
+
+    .nearby__card-name {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nearby__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

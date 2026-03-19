@@ -1,0 +1,264 @@
+/* ==========================================
+   FACILITIES PAGE STYLES - LUXURY EDITION
+   ========================================== */
+
+.facilities-page {
+    min-height: 100vh;
+}
+
+/* Hero Banner */
+.facilities-hero {
+    position: relative;
+    height: 55vh;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1815 0%, #0f0e0c 50%, #0a0908 100%);
+    overflow: hidden;
+}
+
+.facilities-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(183, 156, 105, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(183, 156, 105, 0.05) 0%, transparent 50%);
+}
+
+.facilities-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='0.5' fill='%23C9A962' fill-opacity='0.06'/%3E%3C/svg%3E");
+    background-size: 40px 40px;
+}
+
+.facilities-hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 var(--space-xl);
+}
+
+.facilities-hero__subtitle {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #c9a962;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding: 0 var(--space-2xl);
+}
+
+.facilities-hero__subtitle::before,
+.facilities-hero__subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5));
+}
+
+.facilities-hero__subtitle::before {
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5));
+}
+
+.facilities-hero__subtitle::after {
+    right: 0;
+    background: linear-gradient(90deg, rgba(201, 169, 98, 0.5), transparent);
+}
+
+.facilities-hero__title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.05em;
+}
+
+.facilities-hero__description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+}
+
+/* All Facilities Section */
+.facilities-all {
+    background: linear-gradient(180deg, #ffffff 0%, #fdfcfa 100%);
+    position: relative;
+    padding-top: var(--space-4xl);
+}
+
+.facilities-all::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(183, 156, 105, 0.3), transparent);
+}
+
+.facilities-all__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(183, 156, 105, 0.15);
+    border: 1px solid rgba(183, 156, 105, 0.15);
+    margin-bottom: var(--space-3xl);
+}
+
+.facilities-all__category {
+    background: #fdfcfa;
+    padding: var(--space-3xl) var(--space-2xl);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 100%;
+}
+
+.facilities-all__category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(183, 156, 105, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.facilities-all__category:hover {
+    background: #ffffff;
+}
+
+.facilities-all__category:hover::before {
+    opacity: 1;
+}
+
+.facilities-all__category-header {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(183, 156, 105, 0.2);
+    position: relative;
+}
+
+.facilities-all__category-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #c9a962;
+    transition: width 0.5s ease;
+}
+
+.facilities-all__category:hover .facilities-all__category-header::after {
+    width: 60px;
+}
+
+.facilities-all__category-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #2a2a2a;
+    margin: 0;
+    letter-spacing: 0.05em;
+    transition: color 0.4s ease;
+}
+
+.facilities-all__category:hover .facilities-all__category-title {
+    color: #8b7355;
+}
+
+.facilities-all__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs) var(--space-md);
+}
+
+.facilities-all__item {
+    padding: var(--space-xs) 0;
+    font-size: 0.95rem;
+    color: #555555;
+    border-bottom: none;
+    transition: all 0.3s ease;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+/* Remove bottom border for the last two items (last row) */
+.facilities-all__item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+/* Add right border to odd items */
+.facilities-all__item:nth-child(odd) {
+    border-right: none;
+}
+
+/* Restore circle marker */
+.facilities-all__item::before {
+    content: '•';
+    display: block;
+    color: rgba(183, 156, 105, 0.6);
+    font-size: 0.8rem;
+    margin-right: var(--space-md);
+    transition: color 0.3s ease;
+}
+
+.facilities-all__category:hover .facilities-all__item:hover {
+    color: #1a1a1a;
+    background: transparent;
+    padding-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .facilities-all__grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .facilities-hero__title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .facilities-hero {
+        min-height: 350px;
+    }
+
+    .facilities-hero__title {
+        font-size: 2rem;
+    }
+
+    .facilities-all__category {
+        padding: var(--space-xl);
+    }
+}
