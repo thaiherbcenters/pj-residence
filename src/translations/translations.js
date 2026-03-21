@@ -56,14 +56,14 @@ const translations = {
         about: {
             subtitle: 'เกี่ยวกับเรา',
             star: 'ดาว',
-            description1: 'PJ-Residence เรสซิเด้นท์หรู บนถนนนนทบุรี (ซอยนนทบุรี 38) ให้บริการห้องพัก พร้อมอาหารเช้า เติมความสุขตลอดการเข้าพักด้วยสิ่งอำนวยความสะดวกครบครัน',
+            description1: 'PJ-Residence เรสซิเด้นท์หรู บนถนนนนทบุรี (ซอยนนทบุรี 38) ให้บริการห้องพัก พร้อมพื้นที่จอดรถกว้างขวาง เติมความสุขตลอดการเข้าพักด้วยสิ่งอำนวยความสะดวกครบครัน',
             description2: 'ตอบโจทย์ชีวิตคนเมืองที่ต้องการที่พัก เสมือนบ้านหลังที่สองของคุณ เน้นความเป็นส่วนตัว สะอาด และปลอดภัย',
             likeSecondHome: 'เสมือนบ้านหลังที่สองของคุณ',
             features: [
                 { icon: '🔐', text: 'ประตูระบบ Door Rfid Tec และ Key Card ทุกห้อง' },
                 { icon: '📹', text: 'กล้องวงจรปิด (CCTV) ตลอด 24 ชั่วโมง' },
                 { icon: '📶', text: 'อินเตอร์เน็ต WiFi ฟรี!!' },
-                { icon: '🍳', text: 'พร้อมอาหารเช้า' },
+                { icon: '🅿️', text: 'พื้นที่จอดรถกว้างขวาง' },
                 { icon: '🧹', text: 'สะอาด และปลอดภัย' },
                 { icon: '🏠', text: 'เน้นความเป็นส่วนตัว' }
             ]
@@ -309,14 +309,14 @@ const translations = {
         about: {
             subtitle: 'About Us',
             star: 'Star',
-            description1: 'PJ-Residence, a luxury residence on Nonthaburi Road (Soi Nonthaburi 38), offers rooms with breakfast and complete amenities for a comfortable stay.',
+            description1: 'PJ-Residence, a luxury residence on Nonthaburi Road (Soi Nonthaburi 38), offers rooms with ample parking space and complete amenities for a comfortable stay.',
             description2: 'Perfect for city dwellers seeking accommodation like a second home, emphasizing privacy, cleanliness, and safety.',
             likeSecondHome: 'Like your second home',
             features: [
                 { icon: '🔐', text: 'Door RFID Tec and Key Card for all rooms' },
                 { icon: '📹', text: 'CCTV 24 hours' },
                 { icon: '📶', text: 'Free WiFi Internet!!' },
-                { icon: '🍳', text: 'Breakfast included' },
+                { icon: '🅿️', text: 'Ample parking space' },
                 { icon: '🧹', text: 'Clean and safe' },
                 { icon: '🏠', text: 'Privacy focused' }
             ]
@@ -562,14 +562,14 @@ const translations = {
         about: {
             subtitle: '关于我们',
             star: '星',
-            description1: 'PJ-Residence是位于暖武里路（暖武里38巷）的豪华公寓，提供含早餐的客房和完善的设施。',
+            description1: 'PJ-Residence是位于暖武里路（暖武里38巷）的豪华公寓，提供带宽敞停车场的客房和完善的设施。',
             description2: '为城市居民提供如同第二个家般的住宿，注重隐私、清洁和安全。',
             likeSecondHome: '如同您的第二个家',
             features: [
                 { icon: '🔐', text: '所有房间配备RFID门锁和钥匙卡' },
                 { icon: '📹', text: '24小时闭路电视监控' },
                 { icon: '📶', text: '免费WiFi网络!!' },
-                { icon: '🍳', text: '含早餐' },
+                { icon: '🅿️', text: '宽敞的停车场' },
                 { icon: '🧹', text: '干净安全' },
                 { icon: '🏠', text: '注重隐私' }
             ]
