@@ -358,9 +358,9 @@ const Booking = () => {
             accountName: 'น.ส.กิรณา เลิศมณี',
             // Refund bank account labels
             refundBankInfo: 'ข้อมูลบัญชีธนาคารสำหรับคืนเงินมัดจำ',
-            refundBankName: 'ชื่อธนาคาร *',
-            refundAccountNumber: 'เลขที่บัญชี *',
-            refundAccountName: 'ชื่อบัญชี *',
+            refundBankName: 'ชื่อธนาคาร',
+            refundAccountNumber: 'เลขที่บัญชี',
+            refundAccountName: 'ชื่อบัญชี',
         },
         en: {
             heroSubtitle: 'Booking',
@@ -420,9 +420,9 @@ const Booking = () => {
             accountName: 'Ms. Kirana Lertmanee',
             // Refund bank account labels
             refundBankInfo: 'Bank Account for Deposit Refund',
-            refundBankName: 'Bank Name *',
-            refundAccountNumber: 'Account Number *',
-            refundAccountName: 'Account Holder Name *',
+            refundBankName: 'Bank Name',
+            refundAccountNumber: 'Account Number',
+            refundAccountName: 'Account Holder Name',
         },
         cn: {
             heroSubtitle: '预订客房',
@@ -482,9 +482,9 @@ const Booking = () => {
             accountName: 'Ms. Kirana Lertmanee',
             // Refund bank account labels
             refundBankInfo: '退还押金银行账户信息',
-            refundBankName: '银行名称 *',
-            refundAccountNumber: '账号 *',
-            refundAccountName: '账户名 *',
+            refundBankName: '银行名称',
+            refundAccountNumber: '账号',
+            refundAccountName: '账户名',
         }
     };
 
@@ -1825,7 +1825,6 @@ const Booking = () => {
                                                         name="refundBankName"
                                                         value={formData.refundBankName}
                                                         onChange={handleChange}
-                                                        required
                                                         style={{ padding: '12px', borderRadius: '8px', border: '1px solid #d0d0d0' }}
                                                     >
                                                         <option value="">{language === 'th' ? '-- เลือกธนาคาร --' : '-- Select Bank --'}</option>
@@ -1848,7 +1847,6 @@ const Booking = () => {
                                                         value={formData.refundAccountNumber}
                                                         onChange={handleChange}
                                                         placeholder={language === 'th' ? 'เลขที่บัญชี 10-12 หลัก' : 'Account number'}
-                                                        required
                                                         style={{ padding: '12px', borderRadius: '8px', border: '1px solid #d0d0d0' }}
                                                     />
                                                 </div>
@@ -1861,7 +1859,6 @@ const Booking = () => {
                                                     value={formData.refundAccountName}
                                                     onChange={handleChange}
                                                     placeholder={language === 'th' ? 'ชื่อ-นามสกุล ตามบัญชีธนาคาร' : 'Account holder name'}
-                                                    required
                                                     style={{ padding: '12px', borderRadius: '8px', border: '1px solid #d0d0d0', width: '100%' }}
                                                 />
                                             </div>
