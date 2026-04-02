@@ -1984,7 +1984,7 @@ const Booking = () => {
                                             <button
                                                 type="submit"
                                                 className="btn btn-primary"
-                                                disabled={(step === 1 && formData.roomType === 'daily' && availableRooms === 0) || (step === 4 && (!formData.agreeTerms || !formData.paymentSlip || !formData.refundBankName || !formData.refundAccountNumber || !formData.refundAccountName)) || isSubmitting}
+                                                disabled={(step === 1 && formData.roomType === 'daily' && availableRooms === 0) || (step === 4 && (!formData.agreeTerms || !formData.paymentSlip)) || isSubmitting}
                                                 style={isSubmitting ? { opacity: 0.7, cursor: 'wait' } : {}}
                                             >
                                                 {isSubmitting ? (
