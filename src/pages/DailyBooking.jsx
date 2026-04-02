@@ -773,14 +773,13 @@ const DailyBooking = () => {
 
                                     <div className="booking-form__row">
                                         <div className="booking-form__group">
-                                            <label htmlFor="email">{l.email} <span className="required">*</span></label>
+                                            <label htmlFor="email">{l.email}</label>
                                             <input
                                                 type="email"
                                                 id="email"
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                required
                                             />
                                         </div>
                                         <div className="booking-form__group">
@@ -799,14 +798,13 @@ const DailyBooking = () => {
 
                                     <div className="booking-form__row">
                                         <div className="booking-form__group">
-                                            <label htmlFor="idNumber">{l.idNumber} <span className="required">*</span></label>
+                                            <label htmlFor="idNumber">{l.idNumber}</label>
                                             <input
                                                 type="text"
                                                 id="idNumber"
                                                 name="idNumber"
                                                 value={formData.idNumber}
                                                 onChange={handleChange}
-                                                required
                                             />
                                         </div>
                                         <div className="booking-form__group">
